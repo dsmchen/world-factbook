@@ -3,11 +3,10 @@ import { displayCountry } from './country-container.js';
 
 export async function initSearch() {
   const countriesArray = await getCountries();
-  const datalist = document.getElementById('countries');
   const searchInput = document.getElementById('country-search');
   const submitBtn = document.querySelector('form button');
 
-  function handleSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
 
     const countryData = countriesArray.filter(
@@ -18,12 +17,15 @@ export async function initSearch() {
     displayCountry(countryData[0]);
   }
 
-  countriesArray.forEach((country) => createCountryOption(country, datalist));
-  submitBtn.addEventListener('click', handleSubmit);
+  countriesArray.forEach((country) => createCountryOption(country));
+  submitBtn.addEventListener('click', handleClick);
 }
 
-function createCountryOption(country, datalist) {
+function createCountryOption(country) {
+  const datalist = document.getElementById('countries');
   const option = document.createElement('option');
+
   option.value = country.name.common;
+
   datalist.appendChild(option);
 }
