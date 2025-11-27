@@ -11,6 +11,21 @@
     <header>
       <h1>World Factbook</h1>
     </header>
+    <form role="search">
+      <label for="country-search">
+        <span class="visually-hidden">Search for a country</span>
+      </label>
+      <input
+        type="search"
+        id="country-search"
+        placeholder="Search"
+        list="countries"
+      />
+      <datalist id="countries"> </datalist>
+      <button tabindex="-1" type="submit">
+        <span class="visually-hidden">Submit search for a country</span>
+      </button>
+    </form>
     <main>
       <div id="country-grid"></div>
     </main>
