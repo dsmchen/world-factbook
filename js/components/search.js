@@ -15,7 +15,6 @@ export async function initSearch() {
         country.name.common.toLowerCase() == searchInput.value.toLowerCase()
     );
 
-    console.log(countryData);
     displayCountry(countryData[0]);
   }
 
