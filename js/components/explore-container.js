@@ -3,12 +3,11 @@ import { displayCountry } from './country-container.js';
 
 export async function initExplore() {
   const countriesArray = await getCountries();
-  const exploreContainer = document.getElementById('explore-container');
-  const exploreList = document.getElementById('explore-list');
+
   const sortedCountries = countriesArray.sort(compareCountryName);
 
   sortedCountries.forEach((country) =>
-    createCountryItem(country, countriesArray, exploreContainer, exploreList)
+    createCountryListItem(country, countriesArray)
   );
 }
 
@@ -26,17 +25,11 @@ function compareCountryName(a, b) {
   return 0;
 }
 
-function createCountryItem(
-  country,
-  countriesArray,
-  exploreContainer,
-  exploreList
-) {
-  const item = document.createElement('li');
+function createCountryListItem(country, countriesArray) {
   const anchor = document.createElement('a');
-
-  anchor.textContent = country.name.common;
-  anchor.href = '#';
+  const listItem = document.createElement('li');
+  const exploreContainer = document.getElementById('explore-container');
+  const exploreList = document.getElementById('explore-list');
 
   function handleClick(e) {
     const countryData = countriesArray.filter(
@@ -49,7 +42,10 @@ function createCountryItem(
     displayCountry(countryData[0]);
   }
 
+  anchor.textContent = country.name.common;
+  anchor.href = '#';
   anchor.addEventListener('click', handleClick);
-  item.appendChild(anchor);
-  exploreList.appendChild(item);
+
+  listItem.appendChild(anchor);
+  exploreList.appendChild(listItem);
 }
