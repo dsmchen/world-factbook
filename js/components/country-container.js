@@ -1,13 +1,5 @@
-import { getCountries } from '../services/api.js';
-
-export async function displayCountries() {
-  const countryGrid = document.getElementById('country-grid');
-  const dataArray = await getCountries();
-  console.log(dataArray);
-  dataArray.forEach((country) => createCountryCard(country, countryGrid));
-}
-
-function createCountryCard(country, countryGrid) {
+export function displayCountry(country) {
+  const countryContainer = document.getElementById('country-container');
   const countryCard = document.createElement('article');
   const countryName = document.createElement('h2');
   const countryRegion = document.createElement('h3');
@@ -30,5 +22,5 @@ function createCountryCard(country, countryGrid) {
   countryMap.target = '_blank';
 
   countryCard.append(countryName, countryRegion, countryFlag, countryMap);
-  countryGrid.appendChild(countryCard);
+  countryContainer.appendChild(countryCard);
 }

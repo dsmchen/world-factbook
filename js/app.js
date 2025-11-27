@@ -1,5 +1,5 @@
-import { displayCountries } from './components/country-grid.js';
+import { initSearch } from './components/search.js';
 
 window.addEventListener('load', () => {
-  displayCountries();
+  initSearch();
 });
