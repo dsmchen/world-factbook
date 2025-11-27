@@ -9,11 +9,15 @@ export async function initSearch() {
   function handleClick(e) {
     e.preventDefault();
 
+    const countryCard = document.querySelector('article');
     const countryData = countriesArray.filter(
       (country) =>
         country.name.common.toLowerCase() == searchInput.value.toLowerCase()
     );
+    const exploreContainer = document.getElementById('explore-container');
 
+    countryCard?.remove();
+    exploreContainer.classList.add('hidden');
     displayCountry(countryData[0]);
   }
 
