@@ -10,22 +10,22 @@
   <body>
     <header>
       <h1>World Factbook</h1>
+      <form role="search">
+        <label for="country-search">
+          <span class="visually-hidden">Search for a country</span>
+        </label>
+        <input
+          type="search"
+          id="country-search"
+          placeholder="Search"
+          list="countries"
+        />
+        <datalist id="countries"> </datalist>
+        <button tabindex="-1" type="submit">
+          <span class="visually-hidden">Submit search for a country</span>
+        </button>
+      </form>
     </header>
-    <form role="search">
-      <label for="country-search">
-        <span class="visually-hidden">Search for a country</span>
-      </label>
-      <input
-        type="search"
-        id="country-search"
-        placeholder="Search"
-        list="countries"
-      />
-      <datalist id="countries"> </datalist>
-      <button tabindex="-1" type="submit">
-        <span class="visually-hidden">Submit search for a country</span>
-      </button>
-    </form>
     <main>
       <div id="explore-container">
         <h2>Explore all countries</h2>

@@ -2,4 +2,6 @@
 @import 'base/typography.css';
 @import 'base/reset.css';
 @import 'base/global.css';
+@import 'components/header.css';
 @import 'components/search.css';
+@import 'components/explore-container.css';

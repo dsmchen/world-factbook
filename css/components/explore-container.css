@@ -1,0 +1,16 @@
+main {
+  padding: 15px;
+}
+
+#explore-container h2 {
+  margin-bottom: 15px;
+}
+
+#explore-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#explore-list li {
+  margin-bottom: 15px;
+}
