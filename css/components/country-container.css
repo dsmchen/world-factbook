@@ -1,0 +1,40 @@
+#country-container .explore {
+  display: block;
+  margin-bottom: 15px;
+}
+
+#country-container .name {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+#country-container .region {
+  margin-bottom: 15px;
+}
+
+#country-container .flag {
+  margin-bottom: 15px;
+}
+
+#country-container .map {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+#country-container .map::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -20px;
+  content: '';
+  display: block;
+  background: url('../../assets/icons/external-link.svg') center no-repeat;
+  height: 20px;
+  width: 20px;
+}
+
+#country-container ul {
+  margin-bottom: 15px;
+}
