@@ -3,7 +3,7 @@ export async function getCountries() {
 
   try {
     const url =
-      'https://restcountries.com/v3.1/all?fields=name,region,flags,maps';
+      'https://restcountries.com/v3.1/all?fields=name,region,flags,maps,latlng,area,population,demonyms,languages';
     response = await fetch(url);
   } catch (error) {
     console.error(error);
