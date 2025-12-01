@@ -29,6 +29,15 @@
     <main>
       <div id="explore-container">
         <h2>Explore all countries</h2>
+        <div id="filter-select-container">
+          <label for="filter-select">Filter</label>
+          <select id="filter-select">
+            <option value="all">All</option>
+          </select>
+        </div>
+        <p id="explore-error" class="hidden">
+          Sorry, no results found. Please try again.
+        </p>
         <ul id="explore-list"></ul>
       </div>
       <div id="country-container"></div>

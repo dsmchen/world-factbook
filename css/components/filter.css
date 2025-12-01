@@ -1,0 +1,7 @@
+#filter-select-container {
+  margin-bottom: 15px;
+}
+
+#filter-select-container label {
+  font-weight: bold;
+}
