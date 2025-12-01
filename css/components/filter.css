@@ -2,6 +2,12 @@
   margin-bottom: 15px;
 }
 
+#filter-select-container .flex-container {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
 #filter-select-container label {
   font-weight: bold;
 }

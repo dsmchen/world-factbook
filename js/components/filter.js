@@ -1,4 +1,8 @@
-export function initFilter() {
+import { getCountries } from '../services/api.js';
+
+export async function initFilter() {
+  const countriesArray = await getCountries();
+  const numberCountries = document.getElementById('number-countries');
   const alphabet = [
     'A',
     'B',
@@ -29,17 +33,26 @@ export function initFilter() {
     'Å',
   ];
   const filterSelect = document.getElementById('filter-select');
+  const clearFilter = document.getElementById('clear-filter');
 
   function handleSelect(e) {
     const exploreListItems = document.querySelectorAll('#explore-list li');
     const selectedValue = e.target.value;
 
     exploreListItems.forEach((item) => filterItem(item, selectedValue));
+    updateNumberCountries(exploreListItems);
     handleError(exploreListItems);
   }
 
+  function handleClearFilter() {
+    filterSelect.value = 'all';
+    filterSelect.dispatchEvent(new Event('change'));
+  }
+
+  numberCountries.textContent = `${countriesArray.length} countries`;
   alphabet.forEach((char) => createAlphabetOption(char, filterSelect));
   filterSelect.addEventListener('change', handleSelect);
+  clearFilter.addEventListener('click', handleClearFilter);
 }
 
 function createAlphabetOption(char, filterSelect) {
@@ -59,6 +72,15 @@ function filterItem(item, selectedValue) {
   } else {
     item.classList.add('hidden');
   }
+}
+
+function updateNumberCountries(exploreListItems) {
+  const numberCountries = document.getElementById('number-countries');
+  const hiddenListItems = document.querySelectorAll('#explore-list li.hidden');
+
+  numberCountries.textContent = `${
+    exploreListItems.length - hiddenListItems.length
+  } countries`;
 }
 
 function handleError(exploreListItems) {
