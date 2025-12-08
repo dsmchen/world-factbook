@@ -3,7 +3,6 @@ import { displayCountry } from './country-container.js';
 
 export async function initExplore() {
   const countriesArray = await getCountries();
-
   const sortedCountries = countriesArray.sort(compareCountryName);
 
   sortedCountries.forEach((country) =>
@@ -28,7 +27,7 @@ function compareCountryName(a, b) {
 function createCountryListItem(country, countriesArray) {
   const anchor = document.createElement('a');
   const listItem = document.createElement('li');
-  const exploreContainer = document.getElementById('explore-container');
+  const exploreContainer = document.querySelector('.explore-container');
   const exploreList = document.getElementById('explore-list');
 
   function handleClick(e) {

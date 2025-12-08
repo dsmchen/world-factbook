@@ -7,3 +7,10 @@ h1 {
   line-height: 1;
   margin-bottom: 30px;
 }
+
+@media (min-width: 769px) {
+  header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

@@ -99,7 +99,7 @@ function formatLanguages(languages) {
 
 function handleClick(e) {
   const countryCard = e.target.parentElement;
-  const exploreContainer = document.getElementById('explore-container');
+  const exploreContainer = document.querySelector('.explore-container');
 
   countryCard.remove();
   exploreContainer.classList.remove('hidden');

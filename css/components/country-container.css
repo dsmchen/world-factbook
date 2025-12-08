@@ -38,3 +38,14 @@
 #country-container ul {
   margin-bottom: 15px;
 }
+
+@media (min-width: 769px) {
+  #country-container .explore,
+  #country-container .name,
+  #country-container .region,
+  #country-container .flag,
+  #country-container .map,
+  #country-container ul {
+    margin-bottom: 30px;
+  }
+}

@@ -14,11 +14,12 @@ export async function initSearch() {
       (country) =>
         country.name.common.toLowerCase() == searchInput.value.toLowerCase()
     );
-    const exploreContainer = document.getElementById('explore-container');
+    const exploreContainer = document.querySelector('.explore-container');
 
     countryCard?.remove();
     exploreContainer.classList.add('hidden');
     displayCountry(countryData[0]);
+    searchInput.value = '';
   }
 
   countriesArray.forEach((country) => createCountryOption(country));

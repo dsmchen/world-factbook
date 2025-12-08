@@ -2,7 +2,7 @@ main {
   padding: 15px;
 }
 
-#explore-container h2 {
+.explore-container h2 {
   font-size: 2rem;
   margin-bottom: 15px;
 }
@@ -14,4 +14,22 @@ main {
 
 #explore-list li {
   margin-bottom: 15px;
+}
+
+@media (min-width: 769px) {
+  main {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .explore-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+  }
+
+  .explore-container h2 {
+    grid-column: span 2;
+    margin-bottom: 0;
+  }
 }

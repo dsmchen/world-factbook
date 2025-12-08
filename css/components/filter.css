@@ -11,3 +11,9 @@
 #filter-select-container label {
   font-weight: bold;
 }
+
+@media (min-width: 769px) {
+  #filter-select-container {
+    margin-bottom: 30px;
+  }
+}
