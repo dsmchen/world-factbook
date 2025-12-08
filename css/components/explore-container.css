@@ -33,3 +33,14 @@ main {
     margin-bottom: 0;
   }
 }
+
+@media (min-width: 1280px) {
+  main {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .explore-container {
+    gap: 60px;
+  }
+}

@@ -9,43 +9,47 @@
   </head>
   <body>
     <header>
-      <h1>World Factbook</h1>
-      <form role="search">
-        <label for="country-search">
-          <span class="visually-hidden">Search for a country</span>
-        </label>
-        <input
-          type="search"
-          id="country-search"
-          placeholder="Search"
-          list="countries"
-        />
-        <datalist id="countries"> </datalist>
-        <button tabindex="-1" type="submit">
-          <span class="visually-hidden">Submit search for a country</span>
-        </button>
-      </form>
+      <div class="container">
+        <h1>World Factbook</h1>
+        <form role="search">
+          <label for="country-search">
+            <span class="visually-hidden">Search for a country</span>
+          </label>
+          <input
+            type="search"
+            id="country-search"
+            placeholder="Search"
+            list="countries"
+          />
+          <datalist id="countries"> </datalist>
+          <button tabindex="-1" type="submit">
+            <span class="visually-hidden">Submit search for a country</span>
+          </button>
+        </form>
+      </div>
     </header>
     <main>
-      <div class="explore-container">
-        <h2>Explore all countries</h2>
-        <div id="filter-select-container">
-          <div class="flex-container">
-            <p id="number-countries"></p>
-            <button id="clear-filter">Clear filter</button>
-          </div>
+      <div class="container">
+        <div class="explore-container">
+          <h2>Explore all countries</h2>
+          <div id="filter-select-container">
+            <div class="flex-container">
+              <p id="number-countries"></p>
+              <button id="clear-filter">Clear filter</button>
+            </div>
 
-          <label for="filter-select">Filter</label>
-          <select id="filter-select">
-            <option value="all">All</option>
-          </select>
+            <label for="filter-select">Filter</label>
+            <select id="filter-select">
+              <option value="all">All</option>
+            </select>
+          </div>
+          <p id="explore-error" class="hidden">
+            Sorry, no results found. Please try again.
+          </p>
+          <ul id="explore-list"></ul>
         </div>
-        <p id="explore-error" class="hidden">
-          Sorry, no results found. Please try again.
-        </p>
-        <ul id="explore-list"></ul>
+        <div id="country-container"></div>
       </div>
-      <div id="country-container"></div>
     </main>
   </body>
 </html>
