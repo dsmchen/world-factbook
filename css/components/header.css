@@ -1,5 +1,6 @@
 header {
   padding: 15px;
+  border-bottom: 1px solid var(--gray-900);
 }
 
 h1 {
